@@ -1,0 +1,146 @@
+
+
+<form [formGroup]="profileForm" class="form-container p-4">
+  <mat-horizontal-stepper linear [labelPosition]="'bottom'">
+    <mat-step label="Datos Personales">
+
+        <mat-card-content>
+          <div class="row p-4">
+            <div class="col-md-4">
+              <mat-form-field appearance="fill">
+                <mat-label>Nombres</mat-label>
+                <input formControlName="nombres" formcontrolname="firstName" matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="fill">
+                <mat-label>Apellidos</mat-label>
+                <input formControlName="apellidos" formcontrolname="lastName" matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="fill">
+                <mat-label>Lugar de Nacimiento</mat-label>
+                <input formControlName="lugarDeNacimiento" matInput>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row p-4">
+            <div class="col-md-4">
+              <mat-form-field appearance="fill">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input formControlName="fechaDeNacimiento" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input formControlName="telefono" matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="fill">
+                <mat-label>Edad</mat-label>
+                <input formControlName="edad" matInput>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+    </mat-step>
+
+    <mat-step label="Estudios Realizados">
+      <mat-card-content>
+        <div class="row p-4">
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Universidad donde Estudio</mat-label>
+              <input formControlName="universidad" matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Titulo Otorgado</mat-label>
+              <input formControlName="titulo" matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Ciudad</mat-label>
+              <input formControlName="ciudad" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row p-4">
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Fecha de Grado</mat-label>
+              <input formControlName="fechaDeGrado" matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Telefono Universidad</mat-label>
+              <input formControlName="telefonoUniversidad" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-step>
+
+    <mat-step label="Historial Laboral">
+      <mat-card-content>
+        <div class="row p-4">
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Nombre Empresa</mat-label>
+              <input formControlName="nombreEmpresa" matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Cargo Desempeñado</mat-label>
+              <input formControlName="cargo" matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Tiempo laborado</mat-label>
+              <input formControlName="tiempoTrabajado" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row p-4">
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Nombre Empresa</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Cargo Desempeñado</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Tiempo laborado</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+
+    </mat-step>
+  </mat-horizontal-stepper>
+  <mat-card>
+    
+    <mat-card-actions>
+      <button (click)="saveForm()" mat-raised-button="" color="primary">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
