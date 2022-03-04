@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { FormBuilder } from '@angular/forms';
-
+import  Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -50,6 +50,20 @@ export class FormComponent {
   });
 
   saveForm(){
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    })
     console.log('Form Data is ', this.profileForm.value)
   }
 }
